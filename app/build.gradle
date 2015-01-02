@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.example.andreas.timuntest"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "cucumber.api.android.CucumberInstrumentation"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    androidTestCompile 'info.cukes:cucumber-core:1.2.0'
+    androidTestCompile 'info.cukes:cucumber-java:1.2.0'
+    androidTestCompile 'info.cukes:gherkin:2.12.2'
+    androidTestCompile 'info.cukes:cucumber-html:0.2.3'
+    androidTestCompile 'info.cukes:cucumber-android:1.2.0@jar'
+}
