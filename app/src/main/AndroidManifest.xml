@@ -16,11 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <uses-library android:name="android.test.runner"/>
-
     </application>
-    <instrumentation
-        android:name="cucumber.api.android.CucumberInstrumentation"
-        android:targetPackage="cucumber.example.andreas.timuntest" />
 
 </manifest>
