@@ -2,16 +2,40 @@ package com.example.andreas.timuntest;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private EditText editTextFahreheit;
+    private EditText editTextCelcius;
+    private Button buttonConvert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        editTextCelcius = (EditText) findViewById(R.id.editTextCelcius);
+        editTextFahreheit = (EditText) findViewById(R.id.editTextFahrenheit);
+        buttonConvert = (Button) findViewById(R.id.buttonConvert);
+        buttonConvert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                convertFahrenheitToCelcius();
+            }
+        });
+    }
+
+    private void convertFahrenheitToCelcius() {
+        Double fahrenheit = Double.parseDouble(editTextFahreheit.getText().toString());
+        Double celcius = ( fahrenheit  -  32.0)  *  5/9;
+        editTextCelcius.setText(celcius.toString());
     }
 
 
