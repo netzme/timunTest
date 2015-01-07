@@ -19,8 +19,5 @@
         <uses-library android:name="android.test.runner"/>
 
     </application>
-    <instrumentation
-        android:name="cucumber.api.android.CucumberInstrumentation"
-        android:targetPackage="cucumber.example.andreas.timuntest" />
 
 </manifest>
