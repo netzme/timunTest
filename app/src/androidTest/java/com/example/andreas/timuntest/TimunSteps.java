@@ -81,5 +81,4 @@ public class TimunSteps extends ActivityInstrumentationTestCase2<MainActivity> {
 
         nickname.perform(ViewActions.clearText());
     }
-
 }
